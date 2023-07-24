@@ -94,3 +94,15 @@ ul li::before {
     top: 12px;
     left: 8px;
 }
+
+/* unordered list list item with class checked will: change color with a line through info  */
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+
+
+}
+
+ul li.checked::before {
+    background-image: url(images/checked.png);
+}
