@@ -7,16 +7,19 @@
     <title>todo app js</title>
 </head>
 <body>
-
     <!-- container covering whole page -->
-    <div class="container">
+    <div class="container" onclick="changeBGC()">
+        <!-- todo list app element to contain whole todo list app -->
         <div class="todo-app">
             <h2>To-Do List <img src="images/icon.png" alt=""></h2>
             <div class="row">
+                <!-- input field which accepts text data with id input-box and placeholder text -->
                 <input type="text"
                 id="input-box" placeholder="Add you text">
+                <!-- create button element with onclick method which executes function addTask() -->
                 <button onclick="addTask()">Add</button>
             </div>
+            <!-- create unordered list item with id list-container which will be used to target list and add or remove items -->
             <ul id="list-container">
                 <!-- <li class="checked">Task 1</li>
                 <li>Task 2</li>

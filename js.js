@@ -31,6 +31,7 @@ function addTask() {
 
     }
 
+    // set inputField.value to blank string
     inputField.value = "";
     // execute function to save data to localStorage
     saveData();
@@ -52,9 +53,29 @@ listContainer.addEventListener("click", function(e) {
     }
 }, false)
 
+// create array of linear gradiant colors
+const colors = [
+    'linear-gradient(135deg, #153677, #4e085f)',
+    'linear-gradient(135deg, #e01f5a, #6ab04c)',
+    'linear-gradient(135deg, #c86e8d, #333333)',
+    'linear-gradient(135deg, #187bcd, #4c9c75)',
+    'linear-gradient(135deg, #7a3bd9, #6ab04c)',
+];
+
+// create a color index counter and randomly assign it a color using colors.length of array
+let currentColor = Math.floor(Math.random() * colors.length);
+
+// create a change background color function
+function changeBGC() {
+    // select element using querySelector and grab the container
+    const container = document.querySelector(".container");
+    // create index counter
+    currentColor = (currentColor + 1) % colors.length;
+    // select container get the style and backgroundImage and set equal to colors[currentColor]
+    container.style.backgroundImage = colors[currentColor];
+}
 
 // create a function to store values in browsesr data
-
 function saveData() {
     // localStorage setItem string value name of data to listContainers innerHTML value
     // access via localStorage.getItem("data");
@@ -62,9 +83,14 @@ function saveData() {
 
 }
 
+// show task accesses localStorage, .getItem stored with variable string name data
 function showTask(){
     // listContainer holds all list items, save the innerHTML equal to localStorage.getItem saved to name localStorage name "data"
     listContainer.innerHTML = localStorage.getItem("data");
 }
 
+
+// execute showTask function on initial compilation
 showTask();
+
+changeBGC();
