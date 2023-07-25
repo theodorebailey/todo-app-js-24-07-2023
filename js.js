@@ -99,5 +99,5 @@ function showTask(){
 // execute showTask function on initial compilation
 showTask();
 
-// change colour
+// change background colour
 changeBGC();
