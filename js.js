@@ -1,8 +1,11 @@
-// input field
-// button
+// input field, button, listContainer
 
 // create const values to select html elements and store in a variable
+
+// input field equals input-box
 const inputField = document.getElementById("input-box");
+
+// list container is the unordered list to store li elements populated with user inputs
 const listContainer = document.getElementById("list-container");
 
 
@@ -42,15 +45,18 @@ function addTask() {
 // add click event listener to listContainer which executes a function with parameter which we use to
 listContainer.addEventListener("click", function(e) {
     // access the targets tagName value stored in caps and evaluate a truthy expression to see if we should toggle classList value to checked
+    // CAPITAL DUE TO HEIRACHY
     if(e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
         saveData();
     }
     // else if tagName is SPAN in caps parameter.target parentElement with remove function to delete the task
+    // CAPITAL DUE TO HEIRACHY
     else if (e.target.tagName === "SPAN"){
         e.target.parentElement.remove();
         saveData();
     }
+    // 
 }, false)
 
 // create array of linear gradiant colors
@@ -93,4 +99,5 @@ function showTask(){
 // execute showTask function on initial compilation
 showTask();
 
+// change colour
 changeBGC();
